@@ -15,17 +15,19 @@ class FruitViewController: UIViewController {
     var fruit: String?
 
     override func viewWillAppear(_ animated: Bool) {
+    //this function is called before the view appears.
         super.viewWillAppear(animated)
         if let fruit = fruit {
             fruitEmojiLabel?.text = fruit
-
+            
             let fruitName = emojiToName(fruit)
             fruitNameLabel?.text = fruitName
             navigationItem.title = fruitName
-        }
+        }//this ⬆️ sets nav title and textbox to fruitName
     }
 
     fileprivate func emojiToName(_ emoji: String) -> String {
+    //⬆️this means that this f(x) can only be called in FruitViewController.Swift
         switch emoji {
         case "🍎":
             return "Apple"
@@ -50,5 +52,5 @@ class FruitViewController: UIViewController {
         default:
             return ""
         }
-    }
+    }//determines fruit name
 }
